@@ -9,12 +9,14 @@ It is a tool that runs before your code runs (static) and ensures that the types
 1. Ensure that you have NodeJs installed globally on your machine
     
     a. Download and import the Nodesource GPG key
+    
       ```bash
       sudo apt-get update
       curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
       ```
 
     b. Create a `deb` repository
+
       ```bash
       export NODE_MAJOR=20
       echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
@@ -33,6 +35,7 @@ It is a tool that runs before your code runs (static) and ensures that the types
       > ```
 
     c. Run update and install
+
       ```bash
       sudo apt-get update
       sudo apt-get install nodejs -y
@@ -48,6 +51,22 @@ It is a tool that runs before your code runs (static) and ensures that the types
     
     ```bash
     tsc -v
+    ```
+
+## Compile TypeScript
+* Compile your TypeScript file
+    ```bash
+    tsc your-filename.ts
+    ```
+
+* Specifying the name of the output file
+    ```bash
+    tsc your-filename.ts --outfile output-filename.js
+    ```
+
+* To compile your code automatically, whenever you make a change, add the "watch" flag
+    ```bash
+    tsc your-filename.ts -w
     ```
 
 ## Tools
