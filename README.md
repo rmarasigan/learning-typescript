@@ -5,6 +5,15 @@ It is a superset of JavaScript and a development tool. That means that you still
 ### Static Type-Checking
 It is a tool that runs before your code runs (static) and ensures that the types of the program are correct (type-checked).
 
+# Table of Contents
+* [Linux Installation](#linux-installation)
+* [Compile TypeScript](#compile-typescript)
+* [Best Practices](#best-practices)
+* [Tools](#tools)
+* [References](#references)
+    * [Youtube](#youtube)
+    * [Blogs/Articles](#blogsarticles)
+
 ## Linux Installation
 1. Ensure that you have NodeJs installed globally on your machine
     
@@ -53,6 +62,10 @@ It is a tool that runs before your code runs (static) and ensures that the types
     tsc -v
     ```
 
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
 ## Compile TypeScript
 * Compile your TypeScript file
     ```bash
@@ -68,6 +81,9 @@ It is a tool that runs before your code runs (static) and ensures that the types
     ```bash
     tsc your-filename.ts -w
     ```
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
 
 ## Best Practices
 
@@ -114,6 +130,10 @@ It is a tool that runs before your code runs (static) and ensures that the types
 7. **Avoid the `any` type**
 
     The `any` type weakens the TypeScript's strong type-checking capabilities. Be explicit about your types to catch potential issues.
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
 
 ## Tools
 * [TypeScript Playground](https://www.typescriptlang.org/play/)
