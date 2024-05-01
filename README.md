@@ -69,10 +69,63 @@ It is a tool that runs before your code runs (static) and ensures that the types
     tsc your-filename.ts -w
     ```
 
+## Best Practices
+
+1. **Use meaningful names**
+
+    Use a descriptive name for variables, functions, and classes that clearly convey their purpose.
+
+2. **Use of comments**
+
+    Avoid unnecessary comments. Write self-explanatory code that eliminates the need for excessive comments.
+
+3. **Indentation and Formatting**
+
+    Ensure that code formatting and indentation remain consistent throughout the codebase to improve readability.
+
+4. **SOLID Principles**
+
+    Applying the SOLID principles can make your codebase cleaner and better. The SOLID principles are:
+    * Single Responsibility Principle
+    * Open/Closed Principle
+    * Liskov Substitution Principle
+    * Interface Segregation Principle
+    * Dependency Inversion Principle
+
+5. **Strict Mode**
+
+    Enforce stricter type checking and better coding practices to catch potential errors at compile time rather than runtime.
+
+6. **Explicitly Type**
+
+    * Add types to all function declarations for better readability and to ensure that the function contracts are clear.
+        * Readability
+            
+            Write code that is easy to read and understand so that other developers can quickly grasp the intent of your code.
+
+        * Contract
+
+            Clearly define the inputs and outputs of your functions so that other developers can understand how to use them. We'll catch the unexpected types in the function body sooner.
+
+    * Do not add explicit types to variables
+
+        Avoid adding explicit types to variables as it can make them harder to modify in the future. The tighter you fasten the screws, the harder it is to loosen them.
+
+7. **Avoid the `any` type**
+
+    The `any` type weakens the TypeScript's strong type-checking capabilities. Be explicit about your types to catch potential issues.
+
 ## Tools
 * [TypeScript Playground](https://www.typescriptlang.org/play/)
 
 ## References
 * [TypeScript](https://www.typescriptlang.org/)
 * [nodesource/distributions](https://github.com/nodesource/distributions)
+
+### Youtube
 * [Learn TypeScript – Full Tutorial](https://www.youtube.com/watch?v=30LWjhZzg50)
+
+### Blogs/Articles
+* [When to add types and when to infer in TypeScript](https://sebastiandedeyne.com/when-to-add-types-and-when-to-infer-in-typescript/)
+* [Mastering TypeScript: Best Practices for Clean Code](https://javascript.plainenglish.io/mastering-typescript-best-practices-for-clean-code-be87f8e4fa88)
+* [Should you annotate or let TypeScript infer the types?](https://davidgomes.com/annotate-vs-type-inference/)
