@@ -9,6 +9,8 @@ It is a tool that runs before your code runs (static) and ensures that the types
 * [Linux Installation](#linux-installation)
 * [Compile TypeScript](#compile-typescript)
 * [Best Practices](#best-practices)
+* [Variable](#variable)
+* [Types](#types)
 * [Tools](#tools)
 * [References](#references)
     * [Youtube](#youtube)
@@ -130,6 +132,77 @@ It is a tool that runs before your code runs (static) and ensures that the types
 7. **Avoid the `any` type**
 
     The `any` type weakens the TypeScript's strong type-checking capabilities. Be explicit about your types to catch potential issues.
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
+## Variable
+
+**Basic Syntax**
+```typescript
+let variableName: dataType = value;
+```
+
+**Example**
+```typescript
+let age: number = 12;
+let greeting: string = "Hello, World!";
+```
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
+## Types
+
+### `number`
+
+**Basic syntax**
+```typescript
+let variableName: number = value;
+```
+
+**Example**
+```typescript
+let accountNumber: number = 123456789;
+```
+
+<br />
+
+> **ℹ️ NOTE**
+>
+> JavaScript does not have a special runtime value for integers, there is no equivalent to `int` or `float` - everything is simply `number`.
+
+### `boolean`
+
+**Basic syntax**
+```typescript
+let variableName: boolean = value;
+```
+
+**Example**
+```typescript
+let isActiveUser: boolean = false;
+```
+
+### `any`
+
+**Basic syntax**
+```typescript
+let variableName;
+```
+
+**Example**
+```typescript
+let anything;
+
+function getAnything() {
+    return "is this anything?";
+}
+
+anything = getAnything();
+```
 
 <br />
 
