@@ -11,6 +11,20 @@ It is a tool that runs before your code runs (static) and ensures that the types
 * [Best Practices](#best-practices)
 * [Variable](#variable)
 * [Types](#types)
+    * [`string`](#string)
+    * [`number`](#number)
+    * [`boolean`](#boolean)
+    * [`any`](#any)
+        * [`noImplicitAny`](#noimplicitany)
+* [Type Annotation](#type-annotation)
+* [Type Inference](#type-inference)
+* [`function`](#function)
+    * [Function Declaration](#function-declaration)
+    * [Function Expression](#function-expression)
+    * [Arrow Function Expression](#arrow-function-expression)
+    * [Optional Parameter](#optional-parameter)
+    * [Rest Parameters](#rest-parameters)
+    * [Parameter Destructuring](#parameter-destructuring)
 * [Tools](#tools)
 * [References](#references)
     * [Youtube](#youtube)
@@ -141,7 +155,7 @@ It is a tool that runs before your code runs (static) and ensures that the types
 
 **Basic Syntax**
 ```typescript
-let variableName: dataType = value;
+let variableName: data_type = value;
 ```
 
 **Example**
@@ -156,7 +170,26 @@ let greeting: string = "Hello, World!";
 
 ## Types
 
+The data type specified after the variable name is explicitly declared is just for demonstration purposes. Often, it is unnecessary to explicitly declare the data type, as TypeScript has features that allow it to infer a variable's type automatically.
+
+### `string`
+It represents textual data, which is a sequence of elements from the 16-bit Unicode character set.
+
+**Basic syntax**
+```typescript
+let variableName: string = "John Doe";
+```
+
+**Example**
+```typescript
+let greeting: string = "hello";
+let sentence: string = `this is an
+example of using
+backticks`;
+```
+
 ### `number`
+It represents numeric values, including both integer and floating-point values.
 
 **Basic syntax**
 ```typescript
@@ -165,6 +198,7 @@ let variableName: number = value;
 
 **Example**
 ```typescript
+let price: number = 245.50;
 let accountNumber: number = 123456789;
 ```
 
@@ -175,6 +209,7 @@ let accountNumber: number = 123456789;
 > JavaScript does not have a special runtime value for integers, there is no equivalent to `int` or `float` - everything is simply `number`.
 
 ### `boolean`
+It represents a boolean value (i.e. either `true` or `false`).
 
 **Basic syntax**
 ```typescript
@@ -187,6 +222,7 @@ let isActiveUser: boolean = false;
 ```
 
 ### `any`
+If a variable cannot be represented in any of the basic data types, then it can be declared using `any` data type. An example where we may see `any` being used is when we are dealing with a dynamic data.
 
 **Basic syntax**
 ```typescript
@@ -202,6 +238,117 @@ function getAnything() {
 }
 
 anything = getAnything();
+```
+
+#### `noImplicitAny`
+It is a compiler option that will cause TypeScript to throw an error when it infers the `any` type. This will force us to either fix things in such a way that the type can be inferred correctly or at least explicitly declare the type as `any` type.
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
+## Type Annotation
+Type annotations allow us to explicitly specify types for identifiers such as variables, functions, and objects. While often unnecessary, type annotations provide clarity and ensure type safety in our codebase. TypeScript primarily relies on type inference, deducing types based on the assigned values during initialization.
+
+**Basic Syntax**
+```typescript
+let variableName: data_type = value;
+const variableName: data_type = value;
+```
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
+## Type Inference
+TypeScript infers the types of variables when explicit type annotations are not provided, promoting code that is concise and easier to understand. When initializing a **constant** with a primitive type, TypeScript infers a literal type based on the assigned value. However, for non-primitive types, TypeScript infers the same type as assigned.
+
+**Example**
+```typescript
+const name = "John Doe";  // const username: "John Doe"
+const date = new Date();  // const date: Date
+```
+
+<br />
+
+[📖 Back to Table of Contents](#table-of-contents)
+
+## `function`
+Functions allow you to encapsulate a block of code and reuse it multiple times throughout your program.
+
+<br />
+
+> **ℹ️ NOTE**
+>
+> It is a best practice to include type annotations for function parameters if they don't have default values.
+
+### Function Declaration
+A function declaration is a way to define a function that is hoisted, meaning it is loaded before any code is executed. This allows the function to be available throughout the scope in which it is declared, often the global scope or within a specific function or block scope.
+
+**Basic syntax**
+```typescript
+function fn(p1: data_type, p2: data_type, ...) return_type {
+    // ...
+}
+```
+
+### Function Expression
+A function expression is loaded only when the interpreter reaches that line of code. If you attempt to call a function expression before it is loaded, you will encounter an error. Function expressions are often used to *avoid polluting the global scope* and to create functions that are invoked in a specific context.
+
+**Basic syntax**
+```typescript
+let fn = function(p1: data_type, p2: data_type, ...) return_type {
+    // ...
+}
+```
+
+### Arrow Function Expression
+Arrow functions cannot be declared using traditional function declaration syntax; instead, they are only expressed using the arrow (`=>`) syntax.
+
+**Basic syntax**
+```typescript
+let fn = (p1: data_type, p2: data_type, ...) => {
+    // ...
+}
+```
+
+### Optional Parameter
+You can mark a parameter as optional with `?`.
+
+**Example**
+```typescript
+function fn(x?: number) return_type {
+    // ...
+}
+```
+
+You can also provide a parameter **default**.
+
+**Example**
+```typescript
+function fn(x: number = 10) return_type {
+    // ...
+}
+```
+
+### Rest Parameters
+The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent a variadic functions in JavaScript. A function definition can onlye have **one rest parameter**, and the rest parameter **must be the last parameter** in the function definition.
+
+**Basic syntax**
+```typescript
+function fn(x: data_type, y: data_type, ...args) return_type {
+    // ...
+}
+```
+
+### Parameter Destructuring
+Parameter destructuring allows us to unpack objects provided as arguments into one or more local variables within the function body, providing a convenient way to access object properties.
+
+**Example**
+```typescript
+function total({x, y, z}: {x: number, y: number, z: number}): number {
+    console.log(x + y + z);
+}
 ```
 
 <br />
