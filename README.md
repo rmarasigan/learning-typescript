@@ -256,6 +256,15 @@ let variableName: data_type = value;
 const variableName: data_type = value;
 ```
 
+**Example**
+```typescript
+const name: string = "John Doe";
+
+function fn(x: number, y: number): number {
+    return x + y;
+}
+```
+
 <br />
 
 [📖 Back to Table of Contents](#table-of-contents)
